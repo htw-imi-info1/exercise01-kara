@@ -6,18 +6,47 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Kara06 extends Kara
-{
-    /**
-     * Act - do whatever the Kara06 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+public class Kara06 extends Kara{
+    
+    int expectedResult = 0;
+    int karasResult = 0;
+    
+    public Kara06(int expectedResult){
+        super();
+        this.expectedResult = expectedResult;
+    }
+    
+        /**
+         * Act - do whatever the Kara06 wants to do. This method is called whenever
+         * the 'Act' or 'Run' button gets pressed in the environment.
+         */
 
-    public static final int MAX_LENGTH = 20;
-    int length = 1;
-
-    public void act() 
-    {
-        // Add your action code here.
-    }  
-}
+        public void act() 
+        {
+            if (mushroomFront()) {
+                checkResult();
+                Greenfoot.stop();
+            }
+            
+            // Add your action code here.
+        }  
+        public void checkResult(){
+            turnRight();
+            turnRight();
+            int karasResult = 0;
+            for (int stelle = 7;stelle>= 0;stelle--){
+                move();
+                if (onLeaf()){
+                    karasResult += Math.pow(2,stelle);
+                }
+            }
+            move();
+            if (expectedResult != karasResult){
+                System.out.println("Kara hat nicht richtig gerechnet!");
+                System.out.println("Karas Ergebnis: "+karasResult+", es hätte sein sollen: "+expectedResult);
+                System.out.println("Kara: "+Integer.toBinaryString(karasResult)+ " expected: "+Integer.toBinaryString(expectedResult));
+            }
+        
+            }
+        }
+    

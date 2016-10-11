@@ -9,7 +9,6 @@ import java.util.Random;
  */
 public class KaraWorld07Binary extends World 
 {   
-    private final Random randomGenerator = new Random();
     private static final int WORLD_WIDTH = 12;  // Number of horizontal cells
     private static final int WORLD_HEIGHT = 6;  // Number of vertical cells
 
@@ -17,6 +16,8 @@ public class KaraWorld07Binary extends World
     
     private static final int STELLEN = 8, ROW_OFFSET = 2, COLUMN_OFFSET = 2;
     
+    private static final Random randomGenerator = new Random();
+  
     /**
      * Creates a world for Kara.
      */
@@ -29,7 +30,7 @@ public class KaraWorld07Binary extends World
         Greenfoot.setSpeed(40);
 
         // Initialize actors
-        prepare();
+       prepare();
     }
 
     /**
@@ -42,35 +43,35 @@ public class KaraWorld07Binary extends World
      */
     private void prepare() 
     {
-
-        Kara06 kara06 = new Kara06();
-        addObject(kara06, 10, 4);
-        kara06.turnLeft();
-        kara06.turnLeft();
-        
         int upper = randomGenerator.nextInt(255);
         int lower = randomGenerator.nextInt(255);
         int result = upper + lower;
-        System.out.println("upper: "+upper+ " lower: "+lower);
-        System.out.println(Integer.toBinaryString(upper)+ " "+Integer.toBinaryString(lower));
-        int bitmask = 0x000F;
-        
+        //System.out.println("upper: "+upper+ " lower: "+lower);
+        //System.out.println(Integer.toBinaryString(upper)+ " "+Integer.toBinaryString(lower));
+
         for (int stelle = 0; stelle<STELLEN; stelle++){
             if ((upper & (1 << stelle)) != 0){
                 Leaf leaf = new Leaf();
                 addObject(leaf,(STELLEN-stelle+COLUMN_OFFSET-1),ROW_OFFSET);
             }
-           if ((lower & (1 << stelle)) != 0){
+            if ((lower & (1 << stelle)) != 0){
                 Leaf leaf = new Leaf();
                 addObject(leaf,(STELLEN-stelle+COLUMN_OFFSET-1),ROW_OFFSET+1);
             }
-        
+
         }
-        
+
+        Kara06 kara06 = new Kara06(result);
+        addObject(kara06, 10, 4);
+        kara06.turnLeft();
+        kara06.turnLeft();
+
         Mushroom mushroom = new Mushroom();
         addObject(mushroom, 10, 1);
         Mushroom mushroom2 = new Mushroom();
         addObject(mushroom2, 1, 1);
-      
+
+        Mushroom mushroom3 = new Mushroom();
+        addObject(mushroom3, 11, 4);
     }
 }
