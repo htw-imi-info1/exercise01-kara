@@ -1,13 +1,13 @@
 import greenfoot.*;
 
 /**
- * This class creates a world for Kara. It contains settings for height and 
+ * This class creates a world for Kara. It contains settings for height and
  * width of the world and initializes the Actors.
- * 
+ *
  * @author Barbara Kleinen
  */
-public class KaraWorld01 extends World 
-{   
+public class KaraWorld01 extends World
+{
     private static final int WORLD_WIDTH = 20;  // Number of horizontal cells
     private static final int WORLD_HEIGHT = 3;  // Number of vertical cells
 
@@ -16,13 +16,13 @@ public class KaraWorld01 extends World
     /**
      * Creates a world for Kara.
      */
-    public KaraWorld01() 
+    public KaraWorld01()
     {
         // Create the new world
         super(WORLD_WIDTH, WORLD_HEIGHT, CELL_SIZE);
 
         setPaintOrder(Kara01.class, Tree.class, Mushroom.class, Leaf.class);
-        Greenfoot.setSpeed(20);
+        Greenfoot.setSpeed(40);
 
         // Initialize actors
         prepare();
@@ -30,13 +30,13 @@ public class KaraWorld01 extends World
 
     /**
      * Prepare the world, i.e. create all initial actors.
-     * 
+     *
      * Hint:
      * First create and position all Actors with the mouse in the world.
      * Then right-click on the world and choose 'Save the World'. This will
      * automatically generate the content of this method.
      */
-    private void prepare() 
+    private void prepare()
     {
 
         Kara01 kara01 = new Kara01();

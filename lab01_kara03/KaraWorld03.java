@@ -22,7 +22,7 @@ public class KaraWorld03 extends World
         super(WORLD_WIDTH, WORLD_HEIGHT, CELL_SIZE);
 
         setPaintOrder(Kara.class, Tree.class, Mushroom.class, Leaf.class);
-        Greenfoot.setSpeed(20);
+        Greenfoot.setSpeed(40);
 
         // Initialize actors
         prepare();
