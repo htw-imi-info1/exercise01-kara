@@ -7,7 +7,7 @@ import java.util.Random;
  * 
  * @author Barbara Kleinen
  */
-public class KaraWorld07Binary extends World 
+public class KaraWorld07 extends World 
 {   
     private static final int WORLD_WIDTH = 12;  // Number of horizontal cells
     private static final int WORLD_HEIGHT = 6;  // Number of vertical cells
@@ -21,7 +21,7 @@ public class KaraWorld07Binary extends World
     /**
      * Creates a world for Kara.
      */
-    public KaraWorld07Binary() 
+    public KaraWorld07() 
     {
         // Create the new world
         super(WORLD_WIDTH, WORLD_HEIGHT, CELL_SIZE);
@@ -61,10 +61,10 @@ public class KaraWorld07Binary extends World
 
         }
 
-        Kara06 kara06 = new Kara06(result);
-        addObject(kara06, 10, 4);
-        kara06.turnLeft();
-        kara06.turnLeft();
+        Kara07 kara = new Kara07(result);
+        addObject(kara, 10, 4);
+        kara.turnLeft();
+        kara.turnLeft();
 
         Mushroom mushroom = new Mushroom();
         addObject(mushroom, 10, 1);

@@ -6,12 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Kara06 extends Kara{
+public class Kara07 extends Kara{
 
     int expectedResult = 0;
     int karasResult = 0;
 
-    public Kara06(int expectedResult){
+    public Kara07(int expectedResult){
         super();
         this.expectedResult = expectedResult;
     }

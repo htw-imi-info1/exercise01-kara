@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=KaraWorld07Binary()
+comment0.target=KaraWorld07()
 comment0.text=\n\ Creates\ a\ world\ for\ Kara.\n
 comment1.params=
 comment1.target=void\ prepare()
