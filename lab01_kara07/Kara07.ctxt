@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Kara07
+comment0.text=\n\ Write\ a\ description\ of\ class\ Kara06\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=expectedResult
+comment1.target=Kara07(int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Kara06\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.params=
+comment3.target=void\ checkResult()
+numComments=4
